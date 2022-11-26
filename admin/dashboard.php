@@ -14,7 +14,7 @@ require 'php-includes/check-login.php';
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-  IOT based three phase fail monitoring system login
+    IOT based three phase fail monitoring system login
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -111,72 +111,6 @@ require 'php-includes/check-login.php';
             </div>
           </div>
         </div>
-        <div class="content">
-            <div class="card card-plain">
-              <div class="card-header">
-                <h4 class="card-title">Reported time</h4>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
-                      <th>
-                        Time
-                      </th>
-                      <th>
-                        PH
-                      </th>
-                      <th>
-                        Trubidity
-                      </th>
-                      <th>
-                        Temp
-                      </th>
-                    </thead>
-                    <tbody>
-                    <?php
-                    $sql = "SELECT * FROM farmer";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-                    if ($stmt->rowCount() > 0) {
-                        $count = 1;
-                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        ?>
-                      <tr>
-                        <td>
-                        <?php echo $row['names'];?>
-                        </td>
-                        <td>
-                        <?php echo $row['email'];?>
-                        </td>
-                        <td>
-                        <?php echo $row['phone'];?>
-                        </td>
-                        <td>
-                        <?php echo $row['address'];?>
-                        </td>
-                      </tr>
-                      <?php
-                        $count++;
-                        }
-                    }
-                    if(isset($_POST['delete'])){
-                        $sql ="DELETE FROM farmer WHERE id = ?";
-                        $stm = $db->prepare($sql);
-                        if ($stm->execute(array($sid))) {
-                            print "<script>alert('Famer deleted');window.location.assign('farmers.php')</script>";
-                
-                        } else {
-                            print "<script>alert('Fail');window.location.assign('farmers.php')</script>";
-                        }
-                    }
-                    ?>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
     </div>
   </div>
   <!--   Core JS Files   -->
