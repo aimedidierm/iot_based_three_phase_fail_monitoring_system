@@ -4,6 +4,15 @@ ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
 require '../php-includes/connect.php';
 require 'php-includes/check-login.php';
+$query = "SELECT * FROM status ORDER BY id DESC limit 1";
+$stmt = $db->prepare($query);
+$stmt->execute(array($_SESSION['email']));
+$rows = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($stmt->rowCount()>0) {
+    $l1=$rows['l1'];
+    $l2=$rows['l2'];
+    $l3=$rows['l3'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +53,7 @@ require 'php-includes/check-login.php';
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Line 1</p>
-                      <p class="card-title">25<p>
+                      <p class="card-title"><?php echo $l1?><p>
                     </div>
                   </div>
                 </div>
@@ -70,7 +79,7 @@ require 'php-includes/check-login.php';
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Line 2</p>
-                      <p class="card-title">5<p>
+                      <p class="card-title"><?php echo $l2?><p>
                     </div>
                   </div>
                 </div>
@@ -96,7 +105,7 @@ require 'php-includes/check-login.php';
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Line 3</p>
-                      <p class="card-title">23<p>
+                      <p class="card-title"><?php echo $l3?><p>
                     </div>
                   </div>
                 </div>

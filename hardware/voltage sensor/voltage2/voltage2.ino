@@ -15,8 +15,8 @@ void setup() {
 void loop() {
 
   for ( int i = 0; i < 100; i++ ) {
-    sensorValue1 = analogRead(A0);
-    if (analogRead(A0) > 511) {
+    sensorValue1 = analogRead(A2);
+    if (analogRead(A2) > 511) {
       val[i] = sensorValue1;
     }
     else {
