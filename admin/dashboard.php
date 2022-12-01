@@ -6,7 +6,7 @@ require '../php-includes/connect.php';
 require 'php-includes/check-login.php';
 $query = "SELECT * FROM status ORDER BY id DESC limit 1";
 $stmt = $db->prepare($query);
-$stmt->execute(array($_SESSION['email']));
+$stmt->execute();
 $rows = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($stmt->rowCount()>0) {
     $l1=$rows['l1'];
