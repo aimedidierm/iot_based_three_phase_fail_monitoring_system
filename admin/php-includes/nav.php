@@ -1,12 +1,3 @@
-<?php
-$query = "SELECT * FROM admin WHERE email= ? limit 1";
-$stmt = $db->prepare($query);
-$stmt->execute(array($_SESSION['email']));
-$rows = $stmt->fetch(PDO::FETCH_ASSOC);
-if ($stmt->rowCount()>0) {
-    $names=$rows['names'];
-}
-?>
 <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
@@ -16,7 +7,7 @@ if ($stmt->rowCount()>0) {
           </div>
         </a>
         <a href="dashboard.php" class="simple-text logo-normal">
-          <?php echo $names;?>
+          Dashboard
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -54,7 +45,7 @@ if ($stmt->rowCount()>0) {
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">IOT based three phase fail monitoring system login</a>
+            <a class="navbar-brand" href="javascript:;">IOT based three phase fail monitoring system</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
