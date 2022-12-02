@@ -65,6 +65,7 @@ void loop() {
     voltage1();
     voltage2();
     voltage3();
+    Serial.println((String)"l1="+Voltage1+"&l2="+Voltage2+"&l3="+Voltage3);
    if(Voltage1<180){
     fdetected();
     } else if(Voltage2<180&&flag==0){
@@ -100,14 +101,7 @@ void loop() {
        digitalWrite(relay3, HIGH);
        }
     else{Serial.println("okoko");
-     digitalWrite(relay1, HIGH);
-     digitalWrite(relay2, HIGH);
-     digitalWrite(relay3, HIGH);
-     lcd.clear();
-      lcd.setCursor(0,0);
-      lcd.print("No fail");
-      lcd.setCursor(0,1);
-      lcd.print("detected");
+    //okoko
 }
 }
       void voltage1(){
