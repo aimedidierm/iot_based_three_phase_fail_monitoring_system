@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 28, 2022 at 06:12 AM
+-- Generation Time: Jan 02, 2023 at 01:12 AM
 -- Server version: 8.0.29-0ubuntu0.20.04.3
 -- PHP Version: 7.4.3
 
@@ -65,7 +65,8 @@ CREATE TABLE `status` (
 
 INSERT INTO `status` (`id`, `l1`, `l2`, `l3`, `time`) VALUES
 (1, 230, 241, 220, '2022-11-28 04:03:50'),
-(2, 0, 0, 0, '2022-11-28 04:10:59');
+(2, 0, 0, 0, '2022-11-28 04:10:59'),
+(3, 10, 20, 40, '2022-12-02 06:22:58');
 
 --
 -- Indexes for dumped tables
@@ -98,7 +99,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
