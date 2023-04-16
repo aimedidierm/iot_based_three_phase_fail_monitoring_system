@@ -5,7 +5,7 @@ IOT based 3 phase fail monitoring system is a project which detect the fail in 3
 # Setup
 To set up this project is easy, Just clone it from github.
 ## Import database 
-import the sql file which is located under `/db/spt.sql`
+import the sql file which is located under `/db/iot_based_three_phase_fail_monitoring_system.sql`
 
 # Contributing
 Contributions are welcome!
